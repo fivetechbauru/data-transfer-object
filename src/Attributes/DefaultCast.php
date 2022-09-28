@@ -36,7 +36,10 @@ class DefaultCast
         }
 
         foreach ($types as $type) {
-            if ($type->getName() !== $this->targetClass) {
+
+            $typeName = ($type->allowsNull() ? '?' : '') . $type->getName();
+            
+            if ($typeName !== $this->targetClass) {
                 continue;
             }
 
