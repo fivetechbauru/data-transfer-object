@@ -41,7 +41,7 @@ class DataTransferObjectProperty
 
     public function setValue(mixed $value): void
     {
-        if ($this->caster && $value !== null) {
+        if ($this->caster) {
             $value = $this->caster->cast($value);
         }
 
